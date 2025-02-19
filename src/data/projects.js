@@ -134,35 +134,5 @@ export const projects = [
     image: "src/img/Still_SoulBlackOut.webp",
     thumbnail: "src/img/gifs/Soul-Blackout.webm",
     videoId: "816677472"
-  },
-  {
-    title: "Manifesto UOC",
-    director: "Ester G. Mera",
-    directorUrl: "https://estergmera.com/",
-    producer: "We Are CP",
-    producerUrl: "https://www.wearecp.es/",
-    image: "src/img/Still_manifesto_UOC.webp",
-    thumbnail: "src/img/gifs/Manifesto-Uoc.webm",
-    videoId: "1030260797"
-  },
-  {
-    title: "UOC #02",
-    director: "Ester G. Mera",
-    directorUrl: "https://estergmera.com/",
-    producer: "We Are CP",
-    producerUrl: "https://www.wearecp.es/ ",
-    image: "src/img/Still_Universidad_UOC.webp",
-    thumbnail: "src/img/gifs/Universidad-Uoc.webm",
-    videoId: "1047977263"
-  },
-  {
-    title: "Mal de Ojo",
-    director: "Ester G. Mera",
-    directorUrl: "https://estergmera.com/",
-    producer: "Topo Colectivo",
-    producerUrl: "https://www.topocolectivo.com/",
-    image: "src/img/Still_MaldeOjo.webp",
-    thumbnail: "src/img/gifs/Mal-de-Ojo.webm",
-    videoId: "883179965"
   }
 ];
