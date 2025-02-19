@@ -1,0 +1,370 @@
+.project-container {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    max-height: 100dvh;
+    height: 100dvh;
+    width: 100%;
+    margin: 0;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+    overflow: hidden;
+}
+
+.back-button-wrapper {
+    display: inline-block;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    display: inline-block;
+    height: max-content;
+    margin-top: 2.5rem;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    text-align: center;
+    background: white;
+    box-shadow: 0 0 0.417rem 0.417rem rgb(255, 255, 255);
+}
+
+.back-button:hover {
+    color: #C1C1C1;
+}
+
+.video-container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    grid-row: 2;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.plyr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.plyr iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.project-details-wrapper {
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    max-height: 100%;
+    height: min-content;
+    align-self: end;
+    position: relative;
+    z-index: 200;
+}
+
+.project-details {
+    grid-row: 3;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    align-self: end;
+    background: white;
+    box-shadow: 0 0 0.417rem 0.417rem rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 480px) {
+    .video-container {
+        width: calc(100vw - 3.33rem);
+        padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
+    }
+
+    .back-button {
+        margin-top: calc(1.67rem + env(safe-area-inset-top));
+    }
+
+    .horizontal-line {
+        display: none;
+    }
+
+    .project-details {
+        margin-bottom: 1.67rem;
+    }
+
+    .plyr--video .plyr__controls {
+        padding: 0px !important;
+    }
+
+    /* Add these new rules */
+    .plyr--fullscreen-enabled [data-plyr='fullscreen'] {
+        display: block !important;
+    }
+
+    /* Ensure video container takes full space in fullscreen */
+    .plyr--fullscreen-active .plyr__video-wrapper {
+        height: 100% !important;
+        width: 100% !important;
+    }
+}
+
+.project-details a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-details a:hover {
+    color: #C1C1C1;
+}
+
+.navigation-area {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 20%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.navigation-area.left {
+    left: 0;
+}
+
+.navigation-area.right {
+    right: 0;
+}
+
+.navigation-area:hover {
+    background-color: transparent;
+}
+
+.navigation-area.left:hover+.horizontal-line,
+.navigation-area.left:hover~.horizontal-line {
+    background: linear-gradient(270deg, rgba(229, 229, 224, 1) 80%, rgba(0, 0, 0, 1) 100%);
+}
+
+.navigation-area.right:hover+.horizontal-line,
+.navigation-area.right:hover~.horizontal-line {
+    background: linear-gradient(90deg, rgba(229, 229, 224, 1) 80%, rgba(0, 0, 0, 1) 100%);
+}
+
+.plyr--video .plyr__control--overlaid {
+    display: none;
+    background: none !important;
+}
+
+.plyr--video .plyr__control--overlaid:hover {
+    background: none !important;
+}
+
+.plyr--video .plyr__controls {
+    background: none;
+    font-family: 'Inter', sans-serif;
+    background: none !important;
+    padding: 0 30px 20px 30px !important;
+}
+
+.plyr--video .plyr__controls button {
+    background: none;
+    color: white;
+    padding: 0 20px 0 20px !important;
+}
+
+.plyr--video .plyr__controls button:hover {
+    color: #8f8f8f;
+    background: none;
+}
+
+.plyr--video .plyr__progress__container {
+    margin: 0 0.833rem;
+}
+
+.plyr--video .plyr__progress input[type='range'],
+.plyr--video .plyr__progress__buffer {
+    height: 0.167rem;
+}
+
+.plyr--video .plyr__progress input[type='range']::-webkit-slider-thumb {
+    background: black;
+    border: 0.167rem solid white;
+    height: 1rem;
+    width: 1rem;
+}
+
+.plyr--video .plyr__progress__buffer {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.plyr--video .plyr__control[data-plyr='play'] {
+    width: auto;
+    height: fit-content;
+    line-height: 1;
+    padding: 0 !important;
+}
+
+.plyr--video .plyr__control[data-plyr='fullscreen'] {
+    width: auto;
+    height: fit-content;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 0 !important;
+}
+
+.plyr--video .plyr__control[data-plyr='play'] svg,
+.plyr--video .plyr__control[data-plyr='fullscreen'] svg,
+.plyr--video .plyr__control[data-plyr='mute'] svg {
+    display: none;
+}
+
+.video-container:hover .plyr__control[data-plyr='fullscreen'],
+.video-container:hover .fullscreen-button {
+    opacity: 1;
+}
+
+.plyr--video .plyr__control[data-plyr='play']::before {
+    content: 'PLAY';
+}
+
+.plyr--video .plyr__control[data-plyr='play'][aria-pressed='true']::before {
+    content: 'PAUSE';
+}
+
+.plyr--video .plyr__control[data-plyr='fullscreen']::before {
+    content: 'FS';
+}
+
+.plyr--video .plyr__control[data-plyr='fullscreen'][aria-pressed='true']::before {
+    content: 'FS';
+}
+
+.plyr--video .plyr__control[data-plyr='mute']::before {
+    content: 'MUTE';
+}
+
+.plyr--video .plyr__control[data-plyr='mute'][aria-pressed='true']::before {
+    content: 'SOUND';
+}
+
+.plyr--video .plyr__volume {
+    display: block;
+}
+
+.plyr--video .plyr__time {
+    display: none;
+}
+
+.plyr__controls .plyr__controls__item:first-child,
+.plyr__controls .plyr__controls__item.plyr__volume {
+    display: none;
+}
+
+.plyr__controls .plyr__controls__item.plyr__progress__container {
+    display: none;
+}
+
+.video-container.is-fullscreen {
+    z-index: 9999;
+}
+
+.video-container.is-fullscreen .plyr__controls .plyr__controls__item.plyr__progress__container,
+.video-container.is-fullscreen .plyr__controls .plyr__controls__item.plyr__volume {
+    display: block;
+    margin: 0;
+}
+
+.video-container.is-fullscreen .plyr--video .plyr__progress input[type='range'],
+.video-container.is-fullscreen .plyr--video .plyr__progress__buffer {
+    height: 0;
+    background: none;
+}
+
+.video-container.is-fullscreen .plyr--full-ui input[type=range] {
+    color: white;
+    /* Change this to your desired color */
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.video-container.is-fullscreen .plyr--video .plyr__progress input[type='range']::-webkit-slider-thumb {
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.video-container.is-fullscreen .plyr--video .plyr__progress input[type=range]::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.plyr__progress__buffer {
+    display: none;
+}
+
+.video-container.is-fullscreen .plyr--full-ui input[type=range]::-webkit-slider-thumb {
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.video-container.is-fullscreen .plyr--video .plyr__progress__buffer {
+    background-color: none;
+}
+
+.video-container.is-fullscreen.hide-controls .plyr__controls {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.video-container.is-fullscreen:not(.hide-controls) .plyr__controls {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+.fullscreen-info {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.fullscreen-info h1,
+.fullscreen-info p,
+.fullscreen-info a {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.video-container.is-fullscreen .fullscreen-info {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.video-container.is-fullscreen.hide-controls .fullscreen-info {
+    opacity: 0;
+}

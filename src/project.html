@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Project details and video showcase" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google" content="notranslate" />
+    <title>Project Details</title>
+    
+    <!-- DNS Prefetch and Preconnect -->
+    <link rel="dns-prefetch" href="https://player.vimeo.com">
+    <link rel="dns-prefetch" href="https://cdn.plyr.io">
+    <link rel="preconnect" href="https://player.vimeo.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.plyr.io" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/style.css" as="style">
+    <link rel="preload" href="styles/project.css" as="style">
+    <link rel="preload" href="https://cdn.plyr.io/3.7.8/plyr.css" as="style">
+    <link rel="preload" href="https://cdn.plyr.io/3.7.8/plyr.js" as="script">
+    <link rel="preload" href="https://player.vimeo.com/api/player.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+  </head>
+  <body>
+    <div class="horizontal-line" role="presentation"></div>
+    <div class="vertical-line" role="presentation"></div>
+    <main class="project-container">
+      <nav class="back-button-wrapper">
+        <a href="/" class="back-button" aria-label="Close project and return to home">Close</a>
+      </nav>
+      <div class="video-container" role="region" aria-label="Video player">
+        <div class="video-wrapper">
+          <div id="player" data-plyr-provider="vimeo" data-plyr-embed-id="" aria-label="Video content"></div>
+        </div>
+      </div>
+      <article class="project-details-wrapper">
+        <div class="project-details">
+          <h1 id="projectTitle"></h1>
+          <div id="projectContent" role="complementary">
+            <!-- Additional project content will be added here -->
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- Scripts -->
+        <script src="https://player.vimeo.com/api/player.js" defer></script>
+        <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
+        <script type="module" src="js/project.js"></script>
+        <script type="module">
+          import { initNavigation } from "./js/navigation.js";
+          document.addEventListener('DOMContentLoaded', initNavigation);
+        </script>
+      </body>
+    </html>

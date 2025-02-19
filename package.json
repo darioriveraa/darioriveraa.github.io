@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vimeo/player": "^2.25.1",
+    "plyr": "^3.7.8"
+  }
+}
