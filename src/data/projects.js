@@ -64,7 +64,7 @@ export const projects = [
     producer: "Un Reflejo",
     producerUrl: "https://unreflejo.com/?fbclid=PAZXh0bgNhZW0CMTEAAabuzOH35dbuVaZDIjHsDyo-IxX3BUr7XaZaVx1IIOz6CFmWmZpeLCj2Xqg_aem_s0luVAeJMDU_kgzV_XwGpg",
     image: "src/img/Still_Quevoyahacer.webp",
-    thumbnail: "src/img/gifs/loop_iendedtheworld.webm",
+    thumbnail: "src/img/gifs/iendedtheworld.webm",
     videoId: "1057962814"
   },
   {
