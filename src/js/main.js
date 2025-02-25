@@ -189,9 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const isMobile = window.innerWidth <= 480;
 
-  // Mobile-specific optimizations and event handlers from File 1
   if (isMobile) {
-    // Mobile scroll handler with scroll end detection
     container.addEventListener("scroll", () => {
       const scrollTop = container.scrollTop;
 
@@ -274,18 +272,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const scrollTop = container.scrollTop;
       const totalRealHeight = Math.floor(container.clientHeight / visibleItems) * itemCount;
 
-      // Mark that we're scrolling
       isScrolling = true;
       if (scrollTimeout) clearTimeout(scrollTimeout);
 
-      // Handle infinite scroll
       if (scrollTop < totalRealHeight / 2) {
         container.scrollTop = scrollTop + totalRealHeight;
       } else if (scrollTop > totalRealHeight * 2) {
         container.scrollTop = scrollTop - totalRealHeight;
       }
 
-      // Set a timeout to snap to nearest center after scrolling stops
+     
       scrollTimeout = setTimeout(() => {
         isScrolling = false;
         const centeredItem = findCenteredItem();
@@ -299,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
           });
         }
-      }, 150); // Adjust this delay as needed
+      }, 150); 
 
       updateCenteredItem();
     });
@@ -309,13 +305,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     initializeContent();
     updateCenteredItem();
-  }, isMobile ? 500 : 0); // Add delay for mobile devices to ensure proper layout calculation
+  }, isMobile ? 500 : 0); 
 
-  // Initialize horizontal line
   initHorizontalLine();
 });
 
-// Add these variables at the top of the DOMContentLoaded callback
 let lastScrollTop = 0;
 let scrollTimeout = null;
 let scrollEndTimeout = null;
