@@ -1,19 +1,15 @@
 import { projects } from '../data/projects.js';
 import { initHorizontalLine } from './horizontalLine.js';
 
-// Configuration
 const itemCount = projects.length;
 const virtualItemCount = itemCount * 3;
 const visibleItems = 9;
 
-// Initialize all DOM-dependent functionality
 document.addEventListener('DOMContentLoaded', () => {
-  // Get DOM elements
   const scrollContent = document.getElementById("scrollContent");
   const container = document.querySelector(".scroll-container");
   const centerImage = document.createElement('video');
 
-  // Setup center image
   centerImage.id = 'centerImage';
   centerImage.autoplay = true;
   centerImage.loop = true;
@@ -25,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   centerImage.setAttribute('playsinline', ''); // Add explicit playsinline attribute
   centerImage.setAttribute('webkit-playsinline', ''); // Add Safari-specific attribute
 
-  // Add event listeners for Safari
   centerImage.addEventListener('loadedmetadata', () => {
     centerImage.play().catch(e => console.log('Playback failed:', e));
   });
@@ -38,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.image-container').appendChild(centerImage);
 
-  // Add click event listener to centerImage
   centerImage.addEventListener('click', () => {
     const centeredItem = findCenteredItem();
     if (centeredItem) {
@@ -47,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Create and append all virtual items
   function createVirtualItems() {
     scrollContent.innerHTML = "";
     for (let i = 0; i < virtualItemCount; i++) {
@@ -64,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
       div.appendChild(text);
       scrollContent.appendChild(div);
 
-      // Add hover and click events for project navigation and preloading
       let preloadTimeout;
       div.addEventListener('mouseenter', () => {
         preloadTimeout = setTimeout(() => {
@@ -85,14 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Add click event to navigate to project page
       div.addEventListener('click', () => {
         window.location.href = `src/project.html?id=${index}`;
       });
     }
   }
 
-  // Function to find the centered item
   function findCenteredItem() {
     const containerRect = container.getBoundingClientRect();
     const containerCenter = containerRect.top + containerRect.height / 2;
@@ -115,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return closestItem;
   }
 
-  // Function to update item heights
   function updateItemHeights() {
     const newContainerHeight = container.clientHeight;
     const newItemHeight = Math.floor(newContainerHeight / visibleItems);
@@ -127,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Function to update centered item
   function updateCenteredItem() {
     const centeredItem = findCenteredItem();
     if (centeredItem && !centeredItem.classList.contains('centered')) {
@@ -140,48 +128,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Initialize content and calculate dimensions
   function initializeContent() {
     createVirtualItems();
 
-    // Calculate item height based on container height and visible items
     const containerHeight = container.clientHeight;
     const itemHeight = Math.floor(containerHeight / visibleItems);
     const totalRealHeight = itemHeight * itemCount;
 
-    // Apply calculated height to items
     const items = container.querySelectorAll('.list-item');
     items.forEach(item => {
       item.style.height = `${itemHeight}px`;
       item.style.minHeight = `${itemHeight}px`;
     });
 
-    // Find the first project's element and center it
-    const firstProjectIndex = itemCount; // Use middle set of items
+    const firstProjectIndex = itemCount;
     const firstProjectElement = container.querySelectorAll('.list-item')[firstProjectIndex];
 
     if (firstProjectElement) {
-      // Add centered class to the first project
       document.querySelectorAll('.list-item').forEach(item => {
         item.classList.remove('centered');
       });
       firstProjectElement.classList.add('centered');
 
-      // Set the scroll position to center this element
       const elementOffset = firstProjectElement.offsetTop;
       const scrollPosition = elementOffset - (containerHeight - itemHeight) / 2;
       container.scrollTop = scrollPosition;
 
-      // Update the center image
       centerImage.src = firstProjectElement.dataset.videoSrc;
       centerImage.style.display = "block";
     }
 
-    // Initialize horizontal line
     initHorizontalLine();
   }
 
-  // Add event listeners
   window.addEventListener('resize', () => {
     updateItemHeights();
     initHorizontalLine();
@@ -301,7 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Common initialization for both mobile and desktop
   setTimeout(() => {
     initializeContent();
     updateCenteredItem();

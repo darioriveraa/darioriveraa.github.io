@@ -110,12 +110,10 @@
         padding: 0px !important;
     }
 
-    /* Add these new rules */
     .plyr--fullscreen-enabled [data-plyr='fullscreen'] {
         display: block !important;
     }
 
-    /* Ensure video container takes full space in fullscreen */
     .plyr--fullscreen-active .plyr__video-wrapper {
         height: 100% !important;
         width: 100% !important;
@@ -142,10 +140,12 @@
 
 .navigation-area.left {
     left: 0;
+    cursor: w-resize;
 }
 
 .navigation-area.right {
     right: 0;
+    cursor: e-resize;
 }
 
 .navigation-area:hover {
