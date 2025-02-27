@@ -13,7 +13,7 @@
     <div class="vertical-line"></div>
     <div class="contact-container">
       <div class="contact-info-personal">
-        <a href="mailto:drzzdario@gmail.com" class="email-link"
+        <a href="mailto:drzzdario@gmail.com" class="email-link" data-email="drzzdario@gmail.com"
           >E-Mail<br />drzzdario@gmail.com</a>
         <a href="tel:+34682862702" class="phone-link"
           >Phone<br />+34 682 862 702</a>
@@ -24,21 +24,24 @@
         <h1 class="name">Darío Rivera<br>Cinematographer</h1>
       </div>
       <div class="contact-info-repre">
-        <a href="https://planbfree.com/dario-rivera/" class="representation"
+        <a href="https://planbfree.com/dario-rivera/" target="_blank" class="representation"
           >Representation<br />Plan B, Blanca Aysa</a>
         <a href="tel:+34607811916" class="phone-link"
           >Phone<br />+34 607 811 916</a>
-        <a href="mailto:drzzdario@gmail.com" class="email-link"
+        <a href="mailto:blanca@planbfree.com" class="email-link" data-email="blanca@planbfree.com"
           >E-Mail<br />blanca@planbfree.com</a>
         <a href="tel:+34932127750" class="phone-link"
         >Office<br />+34 932 127 750</a>
       </div>
     </div>
+    <div class="copy-notification">Copied</div>
     <script type="module">
       import { initNavigation } from "./js/navigation.js";
       import { initHorizontalLine } from "./js/horizontalLine.js";
+      import { initEmailHandlers } from "./js/main.js";
       initNavigation();
       initHorizontalLine();
+      initEmailHandlers();
     </script>
   </body>
 </html>
