@@ -322,3 +322,49 @@ let scrollEndTimeout = null;
 let isScrolling = false;
 let touchStartY = 0;
 let touchStartScroll = 0;
+
+export function initEmailHandlers() {
+  const notification = document.querySelector('.copy-notification');
+  let notificationTimeout;
+
+  function showNotification() {
+    notification.classList.add('show');
+    if (notificationTimeout) clearTimeout(notificationTimeout);
+    notificationTimeout = setTimeout(() => {
+      notification.classList.remove('show');
+    }, 2000);
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      showNotification();
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  }
+
+  document.querySelectorAll('.email-link').forEach(link => {
+    link.addEventListener('click', async (e) => {
+      const email = link.dataset.email;
+      const mailtoUrl = link.href;
+      
+      // Store the current window length to check if a new window was opened
+      const windowLength = window.length;
+      
+      // Try to open mailto link
+      window.location.href = mailtoUrl;
+      
+      // Wait a brief moment to see if a mail client opened
+      setTimeout(() => {
+        // If no new window was opened and window.length hasn't changed,
+        // assume no mail client handled the mailto link
+        if (window.length === windowLength) {
+          copyToClipboard(email);
+        }
+      }, 300);
+
+      e.preventDefault();
+    });
+  });
+}
