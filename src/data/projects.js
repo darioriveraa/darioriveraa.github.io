@@ -5,6 +5,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "We Are CP",
     producerUrl: "https://www.wearecp.es/",
+    image: "src/img/Still_manifesto_UOC.webp",
     thumbnail: "src/img/gifs/Manifesto-Uoc.webm",
     videoId: "1030260797"
   },
@@ -14,6 +15,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "Topo Colectivo",
     producerUrl: "https://www.topocolectivo.com/",
+    image: "src/img/Still_MaldeOjo.webp",
     thumbnail: "src/img/gifs/Mal-de-Ojo.webm",
     videoId: "883179965"
   },
@@ -23,6 +25,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "We Are CP",
     producerUrl: "https://www.wearecp.es/ ",
+    image: "src/img/Still_Universidad_UOC.webp",
     thumbnail: "src/img/gifs/Universidad-Uoc.webm",
     videoId: "1047977263"
   },
@@ -40,6 +43,7 @@ export const projects = [
     ],
     producer: "Topo Colectivo",
     producerUrl: "https://www.topocolectivo.com/",
+    image: "src/img/Still_Kassandra.webp",
     thumbnail: "src/img/gifs/Kassandra.webm",
     videoId: "1047964179"
   },
@@ -49,6 +53,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "",
     producerUrl: "",
+    image: "src/img/Still_Quevoyahacer.webp",
     thumbnail: "src/img/gifs/qvah-Shego.webm",
     videoId: "785184730"
   },
@@ -58,6 +63,7 @@ export const projects = [
     directorUrl: "https://www.instagram.com/arturocalero/",
     producer: "Un Reflejo",
     producerUrl: "https://unreflejo.com/?fbclid=PAZXh0bgNhZW0CMTEAAabuzOH35dbuVaZDIjHsDyo-IxX3BUr7XaZaVx1IIOz6CFmWmZpeLCj2Xqg_aem_s0luVAeJMDU_kgzV_XwGpg",
+    image: "src/img/Still_Quevoyahacer.webp",
     thumbnail: "src/img/gifs/iendedtheworld.webm",
     videoId: "1057962814"
   },
@@ -75,6 +81,7 @@ export const projects = [
     ],
     producer: "Topo Colectivo",
     producerUrl: "https://www.topocolectivo.com/",
+    image: "src/img/1_47_Still_LaCruz.webp",
     thumbnail: "src/img/gifs/La-Cruz.webm",
     videoId: "987110651"
   },
@@ -84,6 +91,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "Menta Tv",
     producerUrl: "https://menta.tv/",
+    image: "src/img/Still_Buenisssima.webp",
     thumbnail: "src/img/gifs/Buenisima.webm",
     videoId: "840754974"
   },
@@ -93,6 +101,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "Vampire",
     producerUrl: "https://wearevampire.com/",
+    image: "src/img/Still_Trailer_MusicMakers.webp",
     thumbnail: "src/img/gifs/Music-Makers.webm",
     videoId: "1027232038"
   },
@@ -102,6 +111,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "",
     producerUrl: "",
+    image: "src/img/Still_Shego.webp",
     thumbnail: "src/img/gifs/Lucky-Shego.webm",
     videoId: "764116724"
   },
@@ -111,6 +121,7 @@ export const projects = [
     directorUrl: "https://estergmera.com/",
     producer: "",
     producerUrl: "",
+    image: "src/img/Still_SoulBlackOut.webp",
     thumbnail: "src/img/gifs/Soul-Blackout.webm",
     videoId: "815613535"
   }

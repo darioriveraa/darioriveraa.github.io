@@ -1,6 +1,8 @@
 import { projects } from '../data/projects.js';
 import { initHorizontalLine } from './horizontalLine.js';
 
+// Project Information Functions
+// Cache DOM elements at the start
 const DOM = {
     projectTitle: document.getElementById('projectTitle'),
     projectContent: document.getElementById('projectContent'),
@@ -20,7 +22,7 @@ function loadProjectInfo(project) {
 
     const creditsInfo = document.createElement('p');
 
-   
+    // Handle directors information
     if (project.directors) {
         // Multiple directors case
         const directorLinks = project.directors.map(director =>
@@ -54,6 +56,7 @@ function loadProjectInfo(project) {
     return true;
 }
 
+// Video Player Functions
 let playerInstance = null;
 
 function initializeVideoPlayer(videoId) {
@@ -62,10 +65,12 @@ function initializeVideoPlayer(videoId) {
         return null;
     }
 
+    // Clean up existing player if any
     if (playerInstance) {
         playerInstance.destroy();
     }
 
+    // Set initial opacity and transition
     DOM.videoContainer.style.transition = 'opacity 1s ease';
     DOM.videoContainer.style.opacity = '0';
 
@@ -112,8 +117,10 @@ function initializeVideoPlayer(videoId) {
                 const aspectRatio = (height / width) * 100;
                 DOM.player.style.paddingBottom = `${aspectRatio}%`;
 
+                // Force browser to process the layout changes
                 DOM.player.offsetHeight;
 
+                // Show video container after layout is processed
                 setTimeout(() => {
                     requestAnimationFrame(() => {
                         DOM.videoContainer.style.opacity = '1';
@@ -144,13 +151,16 @@ function setupFullscreenHandling() {
             document.msFullscreenElement) {
             videoContainer.classList.add('is-fullscreen');
 
+            // Create fullscreen info if it doesn't exist
             if (!fullscreenInfo && projectInfo) {
                 fullscreenInfo = document.createElement('div');
                 fullscreenInfo.classList.add('fullscreen-info');
 
+                // Clone title
                 const titleClone = DOM.projectTitle.cloneNode(true);
                 fullscreenInfo.appendChild(titleClone);
 
+                // Clone project info
                 const infoClone = projectInfo.cloneNode(true);
                 fullscreenInfo.appendChild(infoClone);
 
@@ -158,6 +168,7 @@ function setupFullscreenHandling() {
             }
         } else {
             videoContainer.classList.remove('is-fullscreen');
+            // Remove fullscreen info
             if (fullscreenInfo) {
                 fullscreenInfo.remove();
                 fullscreenInfo = null;
@@ -165,6 +176,7 @@ function setupFullscreenHandling() {
         }
     };
 
+    // Listen for fullscreen changes across different browsers
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
     document.addEventListener('mozfullscreenchange', handleFullscreenChange);
@@ -188,6 +200,7 @@ function setupControlsVisibility() {
         container.classList.remove('hide-controls');
         isMouseMoving = true;
 
+        // Reset the timer
         clearTimeout(controlsTimeout);
         controlsTimeout = setTimeout(hideControls, 1500);
     }
@@ -196,9 +209,12 @@ function setupControlsVisibility() {
     document.addEventListener('touchstart', showControls);
 }
 
+// Main Initialization
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize horizontal line
     initHorizontalLine();
 
+    // Add resize event listener for horizontal line
     window.addEventListener('resize', () => {
         initHorizontalLine();
     });
@@ -215,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupFullscreenHandling();
     setupControlsVisibility();
 
+    // Create navigation elements
     const createNavArea = (className) => {
         const nav = document.createElement('div');
         nav.className = `navigation-area ${className}`;
@@ -225,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.insertBefore(rightNav, DOM.horizontalLine);
     document.body.insertBefore(leftNav, DOM.horizontalLine);
 
+    // Navigation event handlers
     const navigate = (offset) => () => {
         const newId = (projectId + offset + projects.length) % projects.length;
         window.location.href = `project.html?id=${newId}`;
