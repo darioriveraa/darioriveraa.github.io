@@ -17,7 +17,7 @@ export const projects = [
     producerUrl: "https://www.topocolectivo.com/",
     image: "src/img/Still_MaldeOjo.webp",
     thumbnail: "src/img/gifs/Mal-de-Ojo.webm",
-    videoId: "883179965"
+    videoId: "1060813416"
   },
   {
     title: "UOC #02",
