@@ -96,6 +96,24 @@ export const projects = [
     videoId: "840754974"
   },
   {
+    title: "Hasta el Fondo - Sen Senra",
+    directors: [
+      {
+        name: "Arturo Calero",
+        url: "https://www.instagram.com/arturocalero/"
+      },
+      {
+        name: "Sen Senra",
+        url: "https://www.instagram.com/sensenra/"
+      }
+    ],
+    producer: "Un Reflejo",
+    producerUrl: "https://unreflejo.com/?fbclid=PAZXh0bgNhZW0CMTEAAabuzOH35dbuVaZDIjHsDyo-IxX3BUr7XaZaVx1IIOz6CFmWmZpeLCj2Xqg_aem_s0luVAeJMDU_kgzV_XwGpg",
+    image: "src/img/Still_Buenisssima.webp",
+    thumbnail: "src/img/gifs/loop_hastaelfondo.webm",
+    videoId: "1069770613"
+  },
+  {
     title: "Music Makers for Caixaforum",
     director: "Ester G. Mera",
     directorUrl: "https://estergmera.com/",
