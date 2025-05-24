@@ -48,6 +48,16 @@ export const projects = [
     videoId: "1047964179"
   },
   {
+    title: "El Món Ens Mira - Fc Barcelona",
+    director: "Luchi Nobile",
+    directorUrl: "www.luchinobile.com",
+    producer: "Doce Studios",
+    producerUrl: "www.docestudios.com",
+    image: "src/img/Still_Quevoyahacer.webp",
+    thumbnail: "src/img/gifs/Loop_v1_EMEM.webm",
+    videoId: "1087412706"
+  },
+  {
     title: "¿Que voy a hacer? - Shego",
     director: "Ester G. Mera",
     directorUrl: "https://estergmera.com/",
