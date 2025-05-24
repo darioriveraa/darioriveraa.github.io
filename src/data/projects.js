@@ -50,9 +50,9 @@ export const projects = [
   {
     title: "El Món Ens Mira - Fc Barcelona",
     director: "Luchi Nobile",
-    directorUrl: "www.luchinobile.com",
+    directorUrl: "https://luchinobile.com/",
     producer: "Doce Studios",
-    producerUrl: "www.docestudios.com",
+    producerUrl: "https://docestudios.com/",
     image: "src/img/Still_Quevoyahacer.webp",
     thumbnail: "src/img/gifs/Loop_v1_EMEM.webm",
     videoId: "1087412706"
