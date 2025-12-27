@@ -16,7 +16,7 @@ export const projects = [
     producer: "GymShark",
     producerUrl: "https://www.instagram.com/gymshark/",
     image: "src/img/Still_MaldeOjo.webp",
-    thumbnail: "/src/img/gifs/GymShark.webm",
+    thumbnail: "src/img/gifs/GymShark.webm",
     videoId: "1124188904"
   },
   {
@@ -74,7 +74,7 @@ export const projects = [
     producer: "Oxígeno",
     producerUrl: "https://produccionesoxigeno.es/",
     image: "src/img/Still_Quevoyahacer.webp",
-    thumbnail: "/src/img/gifs/25n.webm",
+    thumbnail: "src/img/gifs/25n.webm",
     videoId: "1149642585"
   },
   {
@@ -122,7 +122,7 @@ export const projects = [
     producer: "Doce Studios",
     producerUrl: "https://docestudios.com/",
     image: "src/img/Still_Buenisssima.webp",
-    thumbnail: "/src/img/gifs/EstrellGalicia.webm",
+    thumbnail: "src/img/gifs/EstrellGalicia.webm",
     videoId: "1149424491"
   },
   {
