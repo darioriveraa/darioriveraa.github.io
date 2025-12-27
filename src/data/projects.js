@@ -10,6 +10,16 @@ export const projects = [
     videoId: "1030260797"
   },
   {
+    title: "Winter Arc - GymShark x CBum",
+    director: "Max Lusson",
+    directorUrl: "https://www.maxlusson.com/",
+    producer: "GymShark",
+    producerUrl: "https://www.instagram.com/gymshark/",
+    image: "src/img/Still_MaldeOjo.webp",
+    thumbnail: "/src/img/gifs/GymShark.webm",
+    videoId: "1124188904"
+  },
+  {
     title: "Mal de Ojo - Anaju",
     director: "Ester G. Mera",
     directorUrl: "https://estergmera.com/",
@@ -102,7 +112,7 @@ export const projects = [
     producer: "Doce Studios",
     producerUrl: "https://docestudios.com/",
     image: "src/img/Still_Buenisssima.webp",
-    thumbnail: "src/img/gifs/EstrellGalicia.webm",
+    thumbnail: "/src/img/gifs/EstrellGalicia.webm",
     videoId: "1149424491"
   },
   {
