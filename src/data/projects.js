@@ -96,6 +96,16 @@ export const projects = [
     videoId: "987110651"
   },
   {
+    title: "The hands that make champions - Estrella Galicia",
+    director: "Luchi Nobile",
+    directorUrl: "https://luchinobile.com/",
+    producer: "Doce Studios",
+    producerUrl: "https://docestudios.com/",
+    image: "src/img/Still_Buenisssima.webp",
+    thumbnail: "src/img/gifs/EstrellGalicia.webm",
+    videoId: "1149424491"
+  },
+  {
     title: "Buenisssima - Raul CLyde",
     director: "Ester G. Mera",
     directorUrl: "https://estergmera.com/",
