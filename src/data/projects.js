@@ -68,6 +68,16 @@ export const projects = [
     videoId: "1087412706"
   },
   {
+    title: "25 N",
+    director: "Ester G. Mera",
+    directorUrl: "https://estergmera.com/",
+    producer: "Oxígeno",
+    producerUrl: "https://produccionesoxigeno.es/",
+    image: "src/img/Still_Quevoyahacer.webp",
+    thumbnail: "/src/img/gifs/25n.webm",
+    videoId: "1149642585"
+  },
+  {
     title: "¿Que voy a hacer? - Shego",
     director: "Ester G. Mera",
     directorUrl: "https://estergmera.com/",
